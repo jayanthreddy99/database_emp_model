@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>retrieve_emp</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="dp">deptno</label>
+            <input type="checkbox" name="dp" id="dp">
+            <select name="dp" id="dp" multiple>
+                {% for do in DTO %}
+                    <option value="{{do.deptno}}">{{do.deptno}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input type="submit" value="retrieve_emp">
+        </form>
+    </center>
+</body>
+</html>
